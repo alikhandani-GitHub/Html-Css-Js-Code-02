@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#next").click(function(){
+            $('img').each(function(){
+                if($(this).is(":hidden")){
+                    $(this).next().fadeIn;
+                }
+                $(this).fadeOut();
+                $(".photo-2").fadeIn("slow");
+            });
+        });
+    });
+
+
+    // $(document).ready(function() {
+    //     $('.slideshow').cycle({
+    //     fx: 'fade',
+    //     pause: 1,
+    //     prev: '#prev',
+    //     next: '#next'
+    //     });
+    // });
+
+
+// $(document).ready(function(){
+//   $("button").click(function(){
+//     $("#div1").fadeIn();
+//     $("#div2").fadeIn("slow");
+//     $("#div3").fadeIn(3000);
+//   });
+// });
+
+
+ </script>
+</head>
+<body>
+
+<div id="slideshowContainer">
+<div class="slideshow">
+    <img class="photo-1" src="photo/p-1.jpg" alt="" style="width: 300px; height: 300px;">
+    <img class="photo-2" src="photo/p-2.jpg" alt="" style="width: 300px; height: 300px; display: none;">
+    <img class="photo-3" src="photo/p-3.jpg" alt="" style="width: 300px; height: 300px; display: none;">
+    <img class="photo-4" src="photo/p-4.jpg" alt="" style="width: 300px; height: 300px; display: none;">
+</div>
+<ul id="control">
+	<!-- <li id="prev"><a href="#">Previous</a></li> -->
+	<li id="next"><a href="#">Next</a></li>
+</ul>
+</div>
+
+</body>
+</html>
