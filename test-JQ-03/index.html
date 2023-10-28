@@ -9,37 +9,95 @@
 <script>
     $(document).ready(function(){
         $("#next").click(function(){
-            $('img').each(function(){
-                if($(this).is(":hidden")){
-                    $(this).next().fadeIn;
-                }
-                $(this).fadeOut();
-                $(".photo-2").fadeIn("slow");
-            });
+            // $('img').each(function(){
+            //     if($(this).is(":hidden")){
+            //         $(this).next().fadeIn;
+            //     }
+            //     $(this).fadeOut();
+            //     $(".photo-2").fadeIn("slow");
+            // });
+            if($('.photo-2').is(":hidden"))
+            {
+                $(".photo-2").fadeIn();
+            }
+            else if($(".photo-3").is(":hidden"))
+            {
+                $(".photo-3").fadeIn();
+            }
+            else if($(".photo-4").is(":hidden"))
+            {
+                $(".photo-4").fadeIn();
+            }
         });
     });
-
-
-    // $(document).ready(function() {
-    //     $('.slideshow').cycle({
-    //     fx: 'fade',
-    //     pause: 1,
-    //     prev: '#prev',
-    //     next: '#next'
-    //     });
-    // });
-
-
-// $(document).ready(function(){
-//   $("button").click(function(){
-//     $("#div1").fadeIn();
-//     $("#div2").fadeIn("slow");
-//     $("#div3").fadeIn(3000);
-//   });
-// });
-
-
  </script>
+
+ <!-- <script>
+
+	var i = 2;
+	$('#slider1').animate({
+		opacity: '1',
+	});
+	var timerInterval = setInterval(function(){
+		$(".slider").each(function() {
+			if($(this).css('opacity') == '1'){
+				$(this).animate({
+					opacity: '0',
+				});
+			}
+		});
+		$('#slider' + i).animate({
+			opacity: '1',
+		});
+		i++;
+		if(i==7){
+			i = 1;
+		}
+	}, 4000);
+	$('.slider-container .forward-btn').click(function(){
+		clearInterval(timerInterval);
+		$(".slider").each(function() {
+			if($(this).css('opacity') == '1'){
+				$(this).animate({
+					opacity: '0',
+				});
+				$('#slider' + i).animate({
+					opacity: '1',
+				});
+				i++;
+				if(i==7){
+					i = 1;
+				}
+			}
+		});
+	});
+	var firstTimeFlag = 0;
+	$('.slider-container .backward-btn').click(function(){
+		if(firstTimeFlag == 0){
+			i = i - 2;
+		}
+		if(i==0){
+			i = 7;
+		}
+		firstTimeFlag = 1;
+		clearInterval(timerInterval);
+		$(".slider").each(function() {
+			if($(this).css('opacity') == '1'){
+				$(this).animate({
+					opacity: '0',
+				});
+				$('#slider' + i).animate({
+					opacity: '1',
+				});
+				i--;
+				if(i==0){
+					i = 7;
+				}
+			}
+		});
+	});
+</script> -->
+
 </head>
 <body>
 

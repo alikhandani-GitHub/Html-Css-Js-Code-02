@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slider</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .slide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container" style="padding-left: 31%; margin-top: 7%;">
+        <div class="slide">
+            <!-- اسلاید 1 -->
+            <img src="photo/p-1.jpg" alt="اسلاید 1" style="width: 500px; height: 400px;">
+        </div>
+        <div class="slide">
+            <!-- اسلاید 2 -->
+            <img src="photo/p-2.jpg" alt="اسلاید 2" style="width: 500px; height: 400px;">
+        </div>
+        <div class="slide">
+            <!-- اسلاید 3 -->
+            <img src="photo/p-3.jpg" alt="اسلاید 3" style="width: 500px; height: 400px;">
+        </div>
+        <div class="slide">
+            <!-- اسلاید 4 -->
+            <img src="photo/p-4.jpg" alt="اسلاید 4" style="width: 500px; height: 400px;">
+        </div>
+    </div>
+    
+        <!-- <li id="prev"><a href="#">Previous</a></li> -->
+        <h2 id="next" style="padding-left: 45%; display: block;"><a href="">Next</a></h2>
+
+    <script>
+          function slideShow() {
+            var slides = $('.slide');
+            var slideIndex = 0;
+
+            function showSlide() {
+                slides.eq(slideIndex).fadeIn(1000).delay(2000).fadeOut(1000, function() {
+                    slideIndex = (slideIndex + 1) % slides.length;
+                    showSlide();
+                });
+            }
+
+            showSlide();
+        }
+
+        $(document).ready(function() {
+        //    $("#next").click(slideShow())
+           slideShow()
+        });
+
+    </script>
+</body>
+</html>
