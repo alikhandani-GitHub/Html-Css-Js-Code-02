@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="slider" style="padding-left: 31%; margin-top: 7%;">
+        <img src="photo/p-1.jpg" alt="Image 1" style="width: 500px; height: 400px;">
+        <img src="photo/p-2.jpg" alt="Image 2" style="width: 500px; height: 400px;">
+        <img src="photo/p-3.jpg" alt="Image 3" style="width: 500px; height: 400px;">
+        <img src="photo/p-4.jpg" alt="Image 4" style="width: 500px; height: 400px;">
+    </div>
+    <div style="margin-left: 670px; margin-top: 20px;">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var currentSlide = 0;
+            var totalSlides = $('#slider img').length; //طول عکسها
+
+            // نمایش اسلاید فعلی
+            function showSlide(index) {
+                $('#slider img').hide();
+                $('#slider img').eq(index).show();
+            }
+
+            //  دکمه قبلی
+            $('#prevBtn').click(function () {
+                currentSlide--;
+                if (currentSlide < 0) {
+                    currentSlide = totalSlides - 1;
+                }
+                showSlide(currentSlide);
+            });
+
+            //  دکمه بعدی
+            $('#nextBtn').click(function () {
+                currentSlide++;
+                if (currentSlide >= totalSlides) {
+                    currentSlide = 0;
+                }
+                showSlide(currentSlide);
+            });
+
+            // نمایش اسلاید اول در زمان بارگیری صفحه
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+
+</html>
