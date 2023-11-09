@@ -25,7 +25,7 @@
         $(document).ready(function () {
 
             var currentSlide = 0;
-            var totalSlides = $('#slider img').length; //طول عکسها
+            var totalSlides = $('#slider img').length; // تعداد کل اسلایدها
 
             // نمایش اسلاید فعلی
             function showSlide(index) {
@@ -36,6 +36,7 @@
             //  دکمه قبلی
             $('#prevBtn').click(function () {
                 currentSlide--;
+                // اسلاید اول رسیدیم با زدن دکمه به اسلاید اخر منتقل شویم
                 if (currentSlide < 0) {
                     currentSlide = totalSlides - 1;
                 }
